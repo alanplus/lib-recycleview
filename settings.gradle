@@ -1,0 +1,2 @@
+include ':app', ':lib', ':refresh-layout', ':lfrecyclerview'
+rootProject.name='lib-recycleview'
