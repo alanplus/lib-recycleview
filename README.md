@@ -2,6 +2,28 @@
 
 ### 依赖
 
+```java
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+```
+
+```java
+
+dependencies {
+    implementation 'com.github.alanplus:lib-recycleview:0.9'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+}
+
+
+```
+
+
 ### 使用
 
 - 简单用法
