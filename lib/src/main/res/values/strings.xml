@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">lib</string>
+    <string name="app_name" translatable="false">lib</string>
     <color name="colorPrimary">#33aaff</color>
+
+    <color name="ripple_color">#ffe2e2e2</color>
+    <color name="color_f9f9f9">#f9f9f9</color>
 </resources>
