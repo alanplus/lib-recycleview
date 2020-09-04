@@ -58,12 +58,22 @@ public class SimpleListHelper<T> {
     private View headView;
     private View footView;
 
+    private boolean isReUserd = true;
 
     public SimpleListHelper(XmRecycleView xmRecycleView) {
         this.mXmRecycleView = xmRecycleView;
         isRefresh = false;
         isLoadMore = false;
         layoutManager = new LinearLayoutManager(xmRecycleView.getContext());
+    }
+
+    public RecyclerView getmRecyclerView() {
+        return mRecyclerView;
+    }
+
+    public SimpleListHelper<T> setReUserd(boolean reUserd) {
+        isReUserd = reUserd;
+        return this;
     }
 
     public SimpleListHelper<T> setIBaseRecycleView(IBaseRecycleView<T> iBaseRcycleView) {
@@ -132,6 +142,9 @@ public class SimpleListHelper<T> {
         mRecyclerView.setLayoutManager(layoutManager);
         adapter = new BaseRecycleAdapter<>(context, mListData, mIBaseRecycleView);
         mRecyclerView.setAdapter(adapter);
+        if (!isReUserd) {
+            mRecyclerView.getRecycledViewPool().setMaxRecycledViews(BaseRecycleAdapter.VIEW_TYPE_COMMON, 0);
+        }
     }
 
     private RefreshHeader getRefreshHeader(Context context) {
